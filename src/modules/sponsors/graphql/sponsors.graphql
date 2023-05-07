@@ -1,0 +1,13 @@
+scalar DateTime
+scalar JSON
+type Sponsor {
+  id: ID!
+  token: String
+  leadInvestor: String
+  otherInvestor: String
+  amountRaised: Int
+  round: String
+  timeStamp: Int
+  date: DateTime
+  createdAt: DateTime
+}

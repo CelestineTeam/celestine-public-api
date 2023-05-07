@@ -1,0 +1,12 @@
+scalar JSON
+
+type UsageMetricsDailySnapshots {
+  tokenName: String
+  data: [UsageMetricItem]
+}
+
+type UsageMetricItem {
+  dailyActiveUsers: Int
+  dailyTransactionCount: Int
+  blockNumber: Int
+}

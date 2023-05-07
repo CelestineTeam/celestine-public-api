@@ -1,0 +1,77 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Cryptocurrency {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  address   String?
+  name      String
+  symbol    String
+  category  String[]
+  platform  Json
+  createdAt DateTime @default(now())
+  imageUrl  String?
+}
+
+model Sponsor {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  token         String
+  leadInvestor  String?
+  otherInvestor String?
+  amountRaised  Int?
+  round         String?
+  date          DateTime?
+  createdAt     DateTime  @default(now())
+}
+
+model DailyIncome {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  tokenName String
+  data      Json
+}
+
+model CumulativeIncome {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  tokenName String
+  data      Json
+}
+
+model UsageMetricsDailySnapshots {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  tokenName String
+  data      Json
+}
+
+model Allocation {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  tokenName String
+  data      Json
+}
+
+model Tvl {
+  id                String @id @default(auto()) @map("_id") @db.ObjectId
+  date              String
+  totalLiquidityUSD Float
+}
+
+model TvlCryptocurrency {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  tokenName String
+  data      Json
+}
+
+model ActiveDevV2 {
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  organization String
+  date         String
+  dev_count    Int
+  dev_list     Json
+}

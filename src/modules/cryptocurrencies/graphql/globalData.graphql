@@ -1,0 +1,11 @@
+scalar Date
+
+type TvlItem {
+  date: String
+  value: Float
+}
+
+type GlobalData {
+  currentNasdaqVolume: Float
+  currentCryptoVolume: Float
+}

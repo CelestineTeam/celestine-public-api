@@ -1,0 +1,16 @@
+scalar DateTime
+type CryptocurrencyChanges {
+  address: String
+  name: String
+  price: Float
+  price_change_24h: Float
+  price_change_7d: Float
+  fdv: Float
+  fdv_percent_change_24h: Float
+  market_cap: Float
+  market_cap_change_24h: Float
+  volume: Float
+  volume_change_24h: Float
+  total_supply: Float
+  createdAt: DateTime
+}

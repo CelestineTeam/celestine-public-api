@@ -1,0 +1,28 @@
+scalar JSON
+scalar DateTime
+
+type GitHubOrganization {
+  org_name: String
+  all_stars: Int
+  all_forks: Int
+  all_commits: Int
+  people: Int
+  most_forked_repository: JSON
+  most_stared_repository: JSON
+  most_watched_repository: JSON
+  programming_language_ratio: JSON
+  celestine_score: Float
+  celestine_ranking: Int
+  active_dev: [ActiveDev]
+}
+
+type ActiveDev {
+  organization: String
+  date: String
+  dev_count: Int
+  dev_list: JSON
+}
+
+type Query {
+  getDevDataByOrgName(name: String!): GitHubOrganization
+}

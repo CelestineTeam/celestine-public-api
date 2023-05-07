@@ -1,0 +1,13 @@
+scalar JSON
+
+type CumulativeIncome {
+  id: ID!
+  tokenName: String
+  data: [IncomeItem]
+}
+
+type IncomeItem {
+  date: Int
+  fees: Float
+  revenue: Float
+}

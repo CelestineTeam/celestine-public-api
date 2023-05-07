@@ -1,0 +1,25 @@
+scalar JSON
+
+type OnchainData {
+  name: String!
+  allocation: Allocation
+  usageMetricsDailySnapshots: UsageMetricsDailySnapshots
+  dailyIncome: DailyIncome
+  cumulativeIncome: CumulativeIncome
+}
+
+type Query {
+  getOnchainDataByName(name: String!): OnchainData
+}
+
+type Allocation {
+  id: ID!
+  tokenName: String
+  data: [AllocationItem]
+}
+
+type AllocationItem {
+  name: String
+  amount: Int
+  percentage: Float
+}

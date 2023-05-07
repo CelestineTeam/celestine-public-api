@@ -1,0 +1,7 @@
+scalar JSON
+
+type DailyIncome {
+  id: ID!
+  tokenName: String
+  data: [IncomeItem]
+}

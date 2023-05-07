@@ -1,0 +1,33 @@
+scalar DateTime
+scalar JSON
+type Cryptocurrency {
+  id: ID!
+  address: String
+  name: String
+  symbol: String
+  category: [String]
+  platform: JSON
+  imageUrl: String
+  tvl: Float
+  cryptocurrencyChanges: CryptocurrencyChanges
+  sponsorData: [Sponsor]
+}
+
+input CreateCryptocurrencyInput {
+  address: String
+  name: String
+  symbol: String
+  category: JSON
+  platform: JSON
+  createdAt: DateTime
+}
+
+input UpdateCryptocurrencyInput {
+  id: Int!
+}
+
+type Query {
+  getAllCryptocurrencies: [Cryptocurrency]!
+  getCryptocurrencyByName(name: String!): Cryptocurrency
+  getGlobalMarketData: GlobalData
+}
